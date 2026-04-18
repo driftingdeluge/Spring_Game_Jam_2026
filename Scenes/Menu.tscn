@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://isw1cp3j2wy8"]
 
-[ext_resource type="StyleBox" uid="uid://c4tcjdphgbp4b" path="res://Buttons.tres" id="1_uubjt"]
+[ext_resource type="StyleBox" uid="uid://c4tcjdphgbp4b" path="res://Buttons.tres" id="1_3kf3n"]
 
 [node name="Main Menu" type="Node" unique_id=439569811]
 
@@ -44,7 +44,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = ExtResource("1_uubjt")
+theme_override_styles/normal = ExtResource("1_3kf3n")
 text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
