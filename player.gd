@@ -17,12 +17,13 @@ func _physics_process(delta):
 		if mode > 2:
 			mode = 0
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		match mode:
+	if Input.is_action_just_pressed("jump"):
+		match mode:   
 			0:
-				velocity = Vector2.UP.rotated(rotation) * rotation_speed
-				velocity.y = jump_force
-				AudioManager.playSound("jump.wav", 0)
+				if is_on_floor():
+					velocity = Vector2.UP.rotated(rotation) * rotation_speed
+					velocity.y = jump_force
+					AudioManager.playSound("jump.wav", 0)
 			1:
 				speed = -speed
 			2:
