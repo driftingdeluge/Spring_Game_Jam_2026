@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_rupst"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
 [ext_resource type="Script" uid="uid://563d77m5scn5" path="res://Scenes/spawner.gd" id="3_u4ce8"]
+[ext_resource type="Texture2D" uid="uid://bf7ohd6wj6l5y" path="res://Assets/cloud.png" id="4_qyfof"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
 
@@ -22,3 +23,25 @@ position = Vector2(636, 429)
 [node name="Spawner" type="Node2D" parent="." unique_id=280141274]
 position = Vector2(1226, 437)
 script = ExtResource("3_u4ce8")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=319054297]
+scroll_scale = Vector2(-1, 1)
+repeat_size = Vector2(1500, 0)
+autoscroll = Vector2(-60, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D2" unique_id=825958682]
+z_index = -2
+offset_right = 1587.0
+offset_bottom = 653.0
+color = Color(0.68235296, 0.80784315, 0.972549, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=957524759]
+scroll_scale = Vector2(-1, 1)
+repeat_size = Vector2(1500, 0)
+autoscroll = Vector2(-60, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1015154778]
+z_index = -2
+position = Vector2(249.00002, 140)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_qyfof")
