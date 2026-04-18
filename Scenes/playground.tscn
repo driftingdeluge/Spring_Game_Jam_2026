@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://563d77m5scn5" path="res://Scenes/spawner.gd" id="3_u4ce8"]
 [ext_resource type="PackedScene" uid="uid://bicf2d4tp2l4s" path="res://Bird.tscn" id="4_qyfof"]
 [ext_resource type="Script" uid="uid://cgr716yb0w64x" path="res://Scenes/button.gd" id="5_3e07v"]
+[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="7_opmy1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
 
@@ -36,5 +37,9 @@ offset_top = 246.0
 offset_right = 348.0
 offset_bottom = 534.0
 script = ExtResource("5_3e07v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=524910097]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1562084413 instance=ExtResource("7_opmy1")]
 
 [connection signal="mode_change" from="Button" to="." method="_on_button_mode_change"]
