@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://c4tcjdphgbp4b" path="res://Buttons.tres" id="1_uubjt"]
 
-[node name="Node" type="Node" unique_id=439569811]
+[node name="Main Menu" type="Node" unique_id=439569811]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=815894058]
 
