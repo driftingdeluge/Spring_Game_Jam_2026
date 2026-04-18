@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://deoyonv3kkf7c"]
+
+[ext_resource type="PackedScene" uid="uid://b42r4swmyq74j" path="res://Scenes/Player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://bcqsj65oph6ou" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
+[ext_resource type="Script" path="res://Scenes/spawner.gd" id="3_u4ce8"]
+[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="4_qyfof"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
+
+[node name="Playground" type="Node2D" unique_id=941280386]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=920438222]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=773737001]
+position = Vector2(425, 472)
+shape = SubResource("WorldBoundaryShape2D_edjgo")
+
+[node name="CharacterBody2D" parent="." unique_id=1494874155 instance=ExtResource("1_rupst")]
+
+[node name="Obstacle" parent="." unique_id=1157789120 instance=ExtResource("2_6xle2")]
+position = Vector2(636, 429)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=280141274]
+position = Vector2(1226, 437)
+script = ExtResource("3_u4ce8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1784347453]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1562084413 instance=ExtResource("4_qyfof")]
