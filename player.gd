@@ -17,3 +17,6 @@ func _physics_process(delta):
 		AudioManager.playSound("jump.wav", 0)
 
 	move_and_slide()
+
+func set_mode():
+	velocity.y = jump_force
