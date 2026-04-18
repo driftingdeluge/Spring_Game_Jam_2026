@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://isw1cp3j2wy8"]
 
 [ext_resource type="StyleBox" uid="uid://c4tcjdphgbp4b" path="res://Buttons.tres" id="1_3kf3n"]
+[ext_resource type="Script" uid="uid://ck47u2b4o3r63" path="res://Scenes/menu.gd" id="1_6pedr"]
 
 [node name="Main Menu" type="Node" unique_id=439569811]
+script = ExtResource("1_6pedr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=815894058]
 
@@ -71,17 +73,17 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1691918991]
+[node name="Play" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1691918991]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Play"
 
-[node name="Button2" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1808992374]
+[node name="Options" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1808992374]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Options"
 
-[node name="Button3" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1224183412]
+[node name="Exit" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1224183412]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Exit"
@@ -92,3 +94,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="pressed" from="CanvasLayer/Container/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Container/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Container/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
