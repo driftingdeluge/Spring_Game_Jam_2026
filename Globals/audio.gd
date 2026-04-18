@@ -57,7 +57,7 @@ func start_song(resource, volume):
 	
 # Specific for Music
 func load_music(id, volume):
-	var stream: AudioStream = load("res://audio/%s.ogg" % id)
+	var stream: AudioStream = load("res://Audio/Music/%s.ogg" % id)
 	return stream
 
 func update():
@@ -70,7 +70,7 @@ func update():
 		head_ = (head_ + 1) % MAX_PENDING
 
 func loadSound(id):
-	var stream: AudioStream = load("res://audio/%s.ogg" % id)
+	var stream: AudioStream = load("res://Audio/%s.ogg" % id)
 	return stream
 
 var channels: Array[AudioStreamPlayer] = []
