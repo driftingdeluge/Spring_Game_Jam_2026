@@ -71,7 +71,7 @@ func update():
 		head_ = (head_ + 1) % MAX_PENDING
 
 func loadSound(id):
-	var stream: AudioStream = load("res://Audio/%s.ogg" % id)
+	var stream: AudioStream = load("res://Audio/%s" % id)
 	return stream
 
 var channels: Array[AudioStreamPlayer] = []

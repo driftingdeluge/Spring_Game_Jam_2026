@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://futohi41ky8k"]
+
+[ext_resource type="Texture2D" uid="uid://xgddwp673vky" path="res://icon.svg" id="1_15o2q"]
+
+[node name="Obstacle" type="StaticBody2D" unique_id=1157789120]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=698724755]
+texture = ExtResource("1_15o2q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=765870148]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)

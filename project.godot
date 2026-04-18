@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Spring Game Jam 2026"
+run/main_scene="uid://isw1cp3j2wy8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
