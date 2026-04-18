@@ -30,3 +30,6 @@ func _physics_process(delta):
 				mode = 2 # attack goes here once enemies are created
 
 	move_and_slide()
+
+func set_mode():
+	velocity.y = jump_force

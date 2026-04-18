@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var obstacle_scene: PackedScene = preload("res://Scenes/obstacle.tscn")
-@export var spawn_time := 1.5
+@export var spawn_time := 3.0
 
 func _ready():
 	spawn_loop()

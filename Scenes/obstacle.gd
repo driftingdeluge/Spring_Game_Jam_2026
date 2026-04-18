@@ -12,7 +12,6 @@ func disable_movement():
 
 func _physics_process(delta):
 	velocity.x = -speed
-	# sup
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

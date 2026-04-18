@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dwhl2tqig2448"]
 
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_rupst"]
+[ext_resource type="Script" uid="uid://pmauwgkcrrw1" path="res://Scenes/playground.gd" id="1_vl51c"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
 [ext_resource type="Script" uid="uid://563d77m5scn5" path="res://Scenes/spawner.gd" id="3_u4ce8"]
-[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="4_qyfof"]
+[ext_resource type="PackedScene" path="res://Bird.tscn" id="4_qyfof"]
+[ext_resource type="Script" uid="uid://cgr716yb0w64x" path="res://Scenes/button.gd" id="5_3e07v"]
+[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="7_opmy1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
 
 [node name="Playground" type="Node2D" unique_id=941280386]
+script = ExtResource("1_vl51c")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=920438222]
 
@@ -15,7 +19,7 @@
 position = Vector2(425, 472)
 shape = SubResource("WorldBoundaryShape2D_edjgo")
 
-[node name="CharacterBody2D" parent="." unique_id=1494874155 instance=ExtResource("1_rupst")]
+[node name="Player" parent="." unique_id=1494874155 instance=ExtResource("1_rupst")]
 
 [node name="Obstacle" parent="." unique_id=1157789120 instance=ExtResource("2_6xle2")]
 position = Vector2(636, 429)
@@ -24,6 +28,18 @@ position = Vector2(636, 429)
 position = Vector2(1226, 437)
 script = ExtResource("3_u4ce8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1784347453]
+[node name="Bird" parent="." unique_id=1842598562 instance=ExtResource("4_qyfof")]
+position = Vector2(1327, 81)
 
-[node name="HUD" parent="CanvasLayer" unique_id=1562084413 instance=ExtResource("4_qyfof")]
+[node name="Button" type="Button" parent="." unique_id=251880352]
+offset_left = 109.0
+offset_top = 246.0
+offset_right = 348.0
+offset_bottom = 534.0
+script = ExtResource("5_3e07v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=524910097]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1562084413 instance=ExtResource("7_opmy1")]
+
+[connection signal="mode_change" from="Button" to="." method="_on_button_mode_change"]
