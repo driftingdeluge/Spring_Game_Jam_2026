@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://b42r4swmyq74j"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_xhfnw"]
 [ext_resource type="Texture2D" path="res://Assets/player.png" id="2_kyqiw"]
+=======
+[gd_scene format=3 uid="uid://cuh2bed3vj1h1"]
+
+[ext_resource type="Script" uid="uid://dmji65ml2blk0" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://c03nojwuxugyc" path="res://Assets/player.png" id="2_kyqiw"]
+>>>>>>> main
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1494874155]
 script = ExtResource("1_xhfnw")

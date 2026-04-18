@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://bcqsj65oph6ou"]
 
 [ext_resource type="Script" path="res://Scenes/obstacle.gd" id="1_2p81s"]
+=======
+[gd_scene format=3 uid="uid://futohi41ky8k"]
+
+[ext_resource type="Script" uid="uid://neuypyl0dgj1" path="res://Scenes/obstacle.gd" id="1_2p81s"]
+>>>>>>> main
 [ext_resource type="Texture2D" uid="uid://xgddwp673vky" path="res://icon.svg" id="1_15o2q"]
 
 [node name="Obstacle" type="CharacterBody2D" unique_id=1557196692]

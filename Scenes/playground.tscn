@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://deoyonv3kkf7c"]
 
 [ext_resource type="PackedScene" uid="uid://b42r4swmyq74j" path="res://Scenes/Player.tscn" id="1_rupst"]
 [ext_resource type="PackedScene" uid="uid://bcqsj65oph6ou" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
 [ext_resource type="Script" path="res://Scenes/spawner.gd" id="3_u4ce8"]
+=======
+[gd_scene format=3 uid="uid://dwhl2tqig2448"]
+
+[ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
+[ext_resource type="Script" uid="uid://563d77m5scn5" path="res://Scenes/spawner.gd" id="3_u4ce8"]
+>>>>>>> main
 [ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="4_qyfof"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
