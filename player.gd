@@ -18,12 +18,14 @@ func _physics_process(delta):
 			mode = 0
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		if mode == 0:
-			velocity = Vector2.UP.rotated(rotation) * rotation_speed
-			velocity.y = jump_force
-			AudioManager.playSound("jump.wav", 0)
-		if mode == 1:
-			speed = -speed
-		#no attack yet
+		match mode:
+			0:
+				velocity = Vector2.UP.rotated(rotation) * rotation_speed
+				velocity.y = jump_force
+				AudioManager.playSound("jump.wav", 0)
+			1:
+				speed = -speed
+			2:
+				mode = 2 # attack goes here once enemies are created
 
 	move_and_slide()
