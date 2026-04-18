@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_rupst"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
+[ext_resource type="Script" uid="uid://563d77m5scn5" path="res://Scenes/spawner.gd" id="3_u4ce8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
 
@@ -17,3 +18,7 @@ shape = SubResource("WorldBoundaryShape2D_edjgo")
 
 [node name="Obstacle" parent="." unique_id=1157789120 instance=ExtResource("2_6xle2")]
 position = Vector2(636, 429)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=280141274]
+position = Vector2(1226, 437)
+script = ExtResource("3_u4ce8")
