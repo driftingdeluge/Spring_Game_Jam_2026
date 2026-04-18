@@ -8,6 +8,8 @@ func _process(delta):
 	update()
 
 func _ready():
+	song_channel = AudioStreamPlayer.new()
+	add_child(song_channel)
 	# create the audio channels (8)
 	for i in range(CHANNEL_COUNT):
 		var player = AudioStreamPlayer.new()
@@ -44,15 +46,20 @@ func findOpenChannel():
 			return i
 	return -1
 
-#func update():
-	#if head_ == tail_:
-		#return
-	#var resource = loadSound(pending_[head_].id)
-	#var channel = findOpenChannel()
-	#if (channel == -1):
-		#return
-	#startSound(resource, channel, pending_[head_].volume)
-	#head_ = (head_ + 1) % MAX_PENDING
+func playSong(id, volume):
+	var stream = load_music(id, volume)
+	start_song(stream, volume)
+	
+func start_song(resource, volume):
+	song_channel.stream = resource
+	song_channel.volume_db = volume
+	song_channel.play()
+	pass
+	
+# Specific for Music
+func load_music(id, volume):
+	var stream: AudioStream = load("res://Audio/Music/%s" % id)
+	return stream
 
 func update():
 	while head_ != tail_:
@@ -64,14 +71,17 @@ func update():
 		head_ = (head_ + 1) % MAX_PENDING
 
 func loadSound(id):
-	var stream: AudioStream = load("res://audio/%s.ogg" % id)
+	var stream: AudioStream = load("res://Audio/%s.ogg" % id)
 	return stream
 
 var channels: Array[AudioStreamPlayer] = []
+var song_channel: AudioStreamPlayer
+
 # size of request queue
 const MAX_PENDING = 16
 const CHANNEL_COUNT = 8
 var pending_: Array[PlayMessage] = []
-#var _num_pending = 0
+var song_: PlayMessage 
+
 var head_ = 0
 var tail_ = 0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bvkgrn2dljie6"
+path="res://.godot/imported/empty shores - clip01.ogg-e298f28369c89d88ed2e9afcd59f8bdb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Music/empty shores - clip01.ogg"
+dest_files=["res://.godot/imported/empty shores - clip01.ogg-e298f28369c89d88ed2e9afcd59f8bdb.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
