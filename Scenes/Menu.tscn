@@ -1,7 +1,22 @@
 [gd_scene format=3 uid="uid://isw1cp3j2wy8"]
 
-[ext_resource type="StyleBox" uid="uid://c4tcjdphgbp4b" path="res://Buttons.tres" id="1_3kf3n"]
 [ext_resource type="Script" uid="uid://ck47u2b4o3r63" path="res://Scenes/menu.gd" id="1_6pedr"]
+
+[sub_resource type="Gradient" id="Gradient_lthh4"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.41791046, 0.7, 1)
+colors = PackedColorArray(0.654902, 0.5529412, 0.6901961, 1, 0.7716149, 0.8176764, 0.7864302, 1, 0.6402568, 0.60910034, 0.8799885, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uubjt"]
+gradient = SubResource("Gradient_lthh4")
+fill = 1
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0.09090909, 0.7979798)
+repeat = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3kf3n"]
+texture = SubResource("GradientTexture2D_uubjt")
 
 [node name="Main Menu" type="Node" unique_id=439569811]
 script = ExtResource("1_6pedr")
@@ -46,7 +61,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = ExtResource("1_3kf3n")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3kf3n")
 text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
