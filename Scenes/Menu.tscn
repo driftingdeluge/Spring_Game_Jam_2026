@@ -23,16 +23,14 @@ script = ExtResource("1_6pedr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=815894058]
 
-[node name="Container" type="Control" parent="CanvasLayer" unique_id=756360797]
-layout_mode = 3
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1392653969]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Main Menu" type="MarginContainer" parent="CanvasLayer/Container" unique_id=396653475]
-layout_mode = 1
+[node name="Main Menu" type="MarginContainer" parent="CanvasLayer" unique_id=396653475]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -45,10 +43,10 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Container/Main Menu" unique_id=1777586066]
+[node name="Panel" type="Panel" parent="CanvasLayer/Main Menu" unique_id=1777586066]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Container/Main Menu/Panel" unique_id=1321826278]
+[node name="Label" type="Label" parent="CanvasLayer/Main Menu/Panel" unique_id=1321826278]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,8 +64,7 @@ text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container" unique_id=451535822]
-layout_mode = 1
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=451535822]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -83,33 +80,26 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Container/MarginContainer" unique_id=549165991]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=549165991]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Play" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1691918991]
+[node name="Play" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=265175363]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Play"
 
-[node name="Options" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1808992374]
+[node name="Options" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1808992374]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Options"
 
-[node name="Exit" type="Button" parent="CanvasLayer/Container/MarginContainer/VBoxContainer" unique_id=1224183412]
+[node name="Exit" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1224183412]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Exit"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1392653969]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[connection signal="pressed" from="CanvasLayer/Container/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Container/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/Container/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

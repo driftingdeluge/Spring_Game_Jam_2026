@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dwhl2tqig2448"]
+
+[ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
+
+[node name="Playground" type="Node2D" unique_id=941280386]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=920438222]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=773737001]
+position = Vector2(425, 472)
+shape = SubResource("WorldBoundaryShape2D_edjgo")
+
+[node name="CharacterBody2D" parent="." unique_id=1494874155 instance=ExtResource("1_rupst")]
+
+[node name="Obstacle" parent="." unique_id=1157789120 instance=ExtResource("2_6xle2")]
+position = Vector2(636, 429)
