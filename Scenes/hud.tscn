@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cykc8rbeyia0c"]
+
+[ext_resource type="Texture2D" uid="uid://xgddwp673vky" path="res://icon.svg" id="1_e0onf"]
+
+[node name="HUD" type="Control" unique_id=1562084413]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUDMargin" type="MarginContainer" parent="." unique_id=1360426510]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUDMargin" unique_id=1308242173]
+layout_mode = 2
+
+[node name="Health" type="Label" parent="HUDMargin/VBoxContainer" unique_id=1090562758]
+layout_mode = 2
+text = "Health: 3"
+
+[node name="Control" type="Control" parent="HUDMargin/VBoxContainer" unique_id=23489644]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionContainer" type="HBoxContainer" parent="HUDMargin/VBoxContainer" unique_id=770528888]
+layout_mode = 2
+alignment = 1
+
+[node name="Attack" type="TextureRect" parent="HUDMargin/VBoxContainer/ActionContainer" unique_id=1992397487]
+layout_mode = 2
+texture = ExtResource("1_e0onf")
+
+[node name="Jump" type="TextureRect" parent="HUDMargin/VBoxContainer/ActionContainer" unique_id=946501379]
+layout_mode = 2
+texture = ExtResource("1_e0onf")
+
+[node name="ChangeDirection" type="TextureRect" parent="HUDMargin/VBoxContainer/ActionContainer" unique_id=129869198]
+layout_mode = 2
+texture = ExtResource("1_e0onf")
