@@ -9,6 +9,7 @@ func _process(delta):
 
 func _ready():
 	song_channel = AudioStreamPlayer.new()
+	add_child(song_channel)
 	# create the audio channels (8)
 	for i in range(CHANNEL_COUNT):
 		var player = AudioStreamPlayer.new()
@@ -45,7 +46,7 @@ func findOpenChannel():
 			return i
 	return -1
 
-func play_song(id, volume):
+func playSong(id, volume):
 	var stream = load_music(id, volume)
 	start_song(stream, volume)
 	
@@ -57,7 +58,7 @@ func start_song(resource, volume):
 	
 # Specific for Music
 func load_music(id, volume):
-	var stream: AudioStream = load("res://Audio/Music/%s.ogg" % id)
+	var stream: AudioStream = load("res://Audio/Music/%s" % id)
 	return stream
 
 func update():

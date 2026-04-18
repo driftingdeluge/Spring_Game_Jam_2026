@@ -1,8 +1,9 @@
 extends Node
 
 func _ready() -> void:
-	# Play a song?
-	pass # Replace with function body.
+	AudioManager.playSong("empty shores - clip01.ogg", 0)
+	#AudioManager.playSound("Music/empty shores - clip01.ogg", 0)
+	pass
 	
 func _on_play_pressed() -> void:
 	GameManager.goto_scene("res://Scenes/Menu.tscn")
