@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 func _physics_process(delta):
 	velocity.x = -speed
+	# sup
 	move_and_slide()
 	
 	if not is_on_floor():
