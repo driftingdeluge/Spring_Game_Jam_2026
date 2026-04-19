@@ -22,5 +22,3 @@ func _on_attack_land() -> void:
 func _on_hud_player_dead() -> void:
 	Engine.time_scale = 0
 	lose.visible = true
-	# get_tree().paused = true
-	pass # Replace with function body.
