@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://cwhw0cqcot3u6"]
 
-[ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_2a60c"]
+[ext_resource type="Script" uid="uid://cct10inq3qcay" path="res://Scenes/level_1.gd" id="1_2a60c"]
 [ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
-[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="3_didp7"]
+[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="3_didp7"]
 [ext_resource type="Texture2D" uid="uid://buyx7y57j6fxa" path="res://Assets/Spike.png" id="5_y4dr7"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="7_2a60c"]
+[ext_resource type="Script" uid="uid://uimhby4vfboy" path="res://Scenes/spike.gd" id="8_4iphx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5erv"]
 texture = ExtResource("3_c5erv")
@@ -69,16 +70,20 @@ position = Vector2(512, 92)
 
 [node name="Spike" type="CharacterBody2D" parent="." unique_id=711165502]
 position = Vector2(776, 152)
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("8_4iphx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Spike" unique_id=1756189571]
+position = Vector2(2.6000366, 20.600006)
 rotation = 3.1415927
 scale = Vector2(2, 2)
 texture = ExtResource("5_y4dr7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spike" unique_id=1843914197]
-position = Vector2(-24.999977, 6.9999995)
+position = Vector2(-22.399948, 27.600002)
 scale = Vector2(0.4926181, 1)
-polygon = PackedVector2Array(48.71924, 8, 81.19885, -24, 16.239746, -24)
+polygon = PackedVector2Array(48.71924, 8, 81.19885, -24, 47.31665, -24, 16.239746, -24)
 
 [node name="DeathBarrier" type="Area2D" parent="." unique_id=698379563]
 collision_layer = 2
@@ -87,4 +92,5 @@ collision_layer = 2
 position = Vector2(1008, 584)
 shape = SubResource("RectangleShape2D_didp7")
 
+[connection signal="got_hit" from="Player" to="." method="_on_player_got_hit"]
 [connection signal="body_entered" from="DeathBarrier" to="." method="_on_death_barrier_body_entered"]

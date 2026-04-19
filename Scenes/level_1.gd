@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 
 func _on_death_barrier_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_player_got_hit() -> void:
+	if get_tree():
+		get_tree().reload_current_scene()

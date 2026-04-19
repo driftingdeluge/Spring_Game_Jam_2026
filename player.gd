@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var rotation_speed = 3.0
 @export var mode = 0 #0 for jump, 1 for switch direction, 2 for attack
 
+signal got_hit
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -25,8 +27,7 @@ func _physics_process(delta):
 				var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x + (2 * speed), position.y), 0xFFFFFFFF, [self.get_rid()])
 				var result = space_state.intersect_ray(query)
 				# if attack hits something
-				if result and result.collider.is_class("CharacterBody2D") and result.collider is GroundEnemy:
-					print("atacked ",result.collider.name)
+				if result and result.collider is GroundEnemy:
 					if abs(result.collider.speed) / -result.collider.speed == abs(speed) / speed:
 						result.collider.die()
 			1:
@@ -37,6 +38,13 @@ func _physics_process(delta):
 			2:
 				speed = -speed
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision:
+			if collision.get_collider() is Spike:
+				got_hit.emit()
+				
+				
 
 func set_mode(new_mode):
 	mode = new_mode
