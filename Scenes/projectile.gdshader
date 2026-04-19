@@ -1,9 +1,9 @@
 shader_type canvas_item;
 
-uniform vec4 color_signal = vec4 (1.0);
-uniform float size : hint_range(0.0, 1.0, 0.01) = 0.5;
-uniform float zoom : hint_range(0.0, 20, 1) = 8.0;
-uniform float speed : hint_range(-10.0, 10.0, 1.0) = 1;
+uniform vec4 color_signal = vec4 (10.0);
+uniform float size : hint_range(0.0, 1.0, 0.01) = 0.9;
+uniform float zoom : hint_range(0.0, 20, 1) = 16.0;
+uniform float speed : hint_range(-10.0, 10.0, 1.0) = 8.0;
 
 void fragment(){
 	
@@ -11,8 +11,8 @@ void fragment(){
 	float t = pow(smoothstep(0.9,0.2,d),0.35);
 	
 	// For rainbow effect, keep this line :
-	vec3 rainbow = 0.5 + 0.5*cos(TIME+UV.xyx+vec3(0,2,4));
-	vec4 color = vec4(rainbow.rgb,1.0);
+	vec3 rainbow = .5 + 0.7*cos(TIME+UV.xyx+vec3(0,2,4));
+	vec4 color = vec4(rainbow.rgb,0.7);
 	
 	// For idle color, delete "//" below :
 	//color = vec4(color_signal.rgb,1.0);

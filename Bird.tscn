@@ -2,15 +2,39 @@
 
 [ext_resource type="Script" uid="uid://begvr64x3jjht" path="res://Scenes/bird.gd" id="1_3udoi"]
 [ext_resource type="Texture2D" uid="uid://1ia7kudrevur" path="res://Assets/bird.png" id="1_sxlb5"]
+[ext_resource type="Shader" uid="uid://vatd4tlkffbd" path="res://Bird.gdshader" id="3_8an33"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6w2wo"]
+shader = ExtResource("3_8an33")
+shader_parameter/color_signal = Vector4(1, 1, 1, 1)
+shader_parameter/size = 0.2
+shader_parameter/zoom = 8.0
+shader_parameter/speed = 1.0
 
 [node name="Bird" type="CharacterBody2D" unique_id=1842598562]
 script = ExtResource("1_3udoi")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1736456477]
+material = SubResource("ShaderMaterial_6w2wo")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597791695]
+visible = false
 modulate = Color(0.27462825, 1.5565991, 1.5565991, 1)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_sxlb5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=428035856]
+visible = false
 scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(31.5, -127.5, -29.900002, -127.5, -46.800003, -122.5, -50.1, -122.5, -81.1, -102.5, -83.4, -102.5, -106.4, -76.5, -107.8, -76.5, -123.8, -43.5, -125, -43.5, -127.5, -34.300003, -127.5, 32.5, -122.5, 46.899994, -122.5, 50.100006, -102.5, 81.100006, -102.5, 83.399994, -84.5, 100.399994, -84.5, 101.600006, -70.5, 110.600006, -70.5, 111.8, -51.5, 120.7, -51.5, 122, -33.4, 127.5, 32.5, 127.5, 46.899994, 122.5, 50, 122.5, 67, 112.5, 69.3, 112.5, 100.2, 84.5, 101.7, 84.5, 120.600006, 51.5, 122, 51.5, 127.5, 30.399994, 127.5, -32.300003, 126.5, -35, 126.5, -39, 115.5, -62, 115.5, -64.2, 102.5, -81.2, 102.5, -83.4, 76.5, -106.4, 76.5, -107.8, 43.5, -123.8, 43.5, -125.1)

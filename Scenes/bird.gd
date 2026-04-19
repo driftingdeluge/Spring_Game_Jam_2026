@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal projectile_fired(projectile)
+
 @export var fly_speed := 160.0
 @export var gravity := 200.0
 
@@ -57,6 +59,7 @@ func shoot():
 	projectile.direction = direction
 	projectile.global_position = self.global_position
 	get_tree().root.add_child(projectile)
+	projectile_fired.emit(projectile)
 
 func _start_shoot_loop():
 	_shoot_loop()

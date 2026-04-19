@@ -1,0 +1,53 @@
+[gd_scene format=4 uid="uid://cwhw0cqcot3u6"]
+
+[ext_resource type="Texture2D" uid="uid://c03nojwuxugyc" path="res://Assets/player.png" id="1_4hvuo"]
+[ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
+[ext_resource type="Script" uid="uid://cqmv20lrjtwds" path="res://Scenes/player.gd" id="1_vly50"]
+[ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
+size = Vector2(26, 57)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5erv"]
+texture = ExtResource("3_c5erv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.0450363, 8, 5.0450363, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.0450363, 8, 5.0450363, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.0450363, 8, 5.0450363, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.0450363, 8, 5.0450363, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_y4dr7"]
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_c5erv")
+
+[node name="Level1" type="Node2D" unique_id=1814583198]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=685021724]
+script = ExtResource("1_vly50")
+
+[node name="Background" type="Sprite2D" parent="CharacterBody2D" unique_id=411106718]
+position = Vector2(20, 76.99999)
+scale = Vector2(36, 20.25)
+texture = ExtResource("1_lyd6k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1390885776]
+position = Vector2(17, 78.5)
+shape = SubResource("RectangleShape2D_vly50")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2068687398]
+position = Vector2(16.781254, 78.34375)
+scale = Vector2(0.06220587, 0.13338234)
+texture = ExtResource("1_4hvuo")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1858623180]
+position = Vector2(17, 79)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=402163442]
+position = Vector2(-41.999996, 120.00001)
+scale = Vector2(5, 2.5)
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAAAAAIAAQAAAAEAAAABAAEAAQABAAAAAAABAAIAAQABAAEAAAADAAIAAQAAAAAAAAADAAMAAQAAAAEAAAAEAAIAAQABAAAAAAAEAAMAAQABAAEAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAEAAAAHAAEAAQABAAAAAAAHAAIAAQABAAEAAAAKAAAAAQABAAEAAAAKAAQAAQABAAEAAAAJAP//AQAAAAAAAAAJAAAAAQAAAAEAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAEAAAAKAP//AQABAAAAAAAKAAMAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_y4dr7")

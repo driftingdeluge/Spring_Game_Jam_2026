@@ -16,3 +16,8 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		attack_land.emit()
 		queue_free()
+	if body.is_in_group("ground"):
+		queue_free()
+
+func _on_player_dead():
+	pass
