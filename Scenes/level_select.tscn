@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dnmg0l63v7qp1"]
+
+[ext_resource type="Script" uid="uid://boqev1q3amrxs" path="res://Scenes/level_select.gd" id="1_1fiak"]
+
+[node name="Control" type="Control" unique_id=1430221311]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1fiak")
+
+[node name="Level1" type="Button" parent="." unique_id=1307632477]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Level 1"
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
