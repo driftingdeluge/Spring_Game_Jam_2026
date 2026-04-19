@@ -2,9 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cov8memsmqxk0" path="res://projectile.gd" id="1_f8cdk"]
 [ext_resource type="Texture2D" uid="uid://1ia7kudrevur" path="res://Assets/bird.png" id="2_yr2qt"]
+[ext_resource type="Shader" uid="uid://dkwxtal5ikdkm" path="res://Scenes/projectile.gdshader" id="3_tl4hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yr2qt"]
 radius = 30.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d4467"]
+shader = ExtResource("3_tl4hk")
+shader_parameter/color_signal = Vector4(1, 1, 1, 1)
+shader_parameter/size = 0.2
+shader_parameter/zoom = 8.0
+shader_parameter/speed = 1.0
 
 [node name="Projectile" type="Area2D" unique_id=489988048]
 script = ExtResource("1_f8cdk")
@@ -13,9 +21,17 @@ script = ExtResource("1_f8cdk")
 shape = SubResource("CircleShape2D_yr2qt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=667152877]
+visible = false
 position = Vector2(0.33829045, 0.3322698)
 scale = Vector2(-0.2292201, -0.22514118)
 texture = ExtResource("2_yr2qt")
 flip_v = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=345432336]
+material = SubResource("ShaderMaterial_d4467")
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

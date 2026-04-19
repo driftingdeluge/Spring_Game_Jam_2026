@@ -26,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_6fbih")
 
 [node name="HUDMargin" type="MarginContainer" parent="." unique_id=1360426510]
@@ -35,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
@@ -43,8 +45,10 @@ script = SubResource("GDScript_6fbih")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUDMargin" unique_id=1308242173]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Health" type="Label" parent="HUDMargin/VBoxContainer" unique_id=1090562758]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Health: 3"
 
@@ -54,6 +58,7 @@ size_flags_vertical = 3
 
 [node name="ActionContainer" type="HBoxContainer" parent="HUDMargin/VBoxContainer" unique_id=770528888]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="Attack" type="TextureRect" parent="HUDMargin/VBoxContainer/ActionContainer" unique_id=1992397487]

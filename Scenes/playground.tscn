@@ -4,16 +4,16 @@
 [ext_resource type="Script" uid="uid://pmauwgkcrrw1" path="res://Scenes/playground.gd" id="1_vl51c"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="2_6xle2"]
 [ext_resource type="Script" uid="uid://563d77m5scn5" path="res://Scenes/spawner.gd" id="3_u4ce8"]
-[ext_resource type="PackedScene" path="res://Bird.tscn" id="4_qyfof"]
+[ext_resource type="PackedScene" uid="uid://bicf2d4tp2l4s" path="res://Bird.tscn" id="4_qyfof"]
 [ext_resource type="Script" uid="uid://cgr716yb0w64x" path="res://Scenes/button.gd" id="5_3e07v"]
-[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="7_opmy1"]
+[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="7_opmy1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_edjgo"]
 
-[node name="Playground" type="Node2D" unique_id=941280386]
+[node name="Playground" type="Node" unique_id=715896330]
 script = ExtResource("1_vl51c")
 
-[node name="Ground" type="StaticBody2D" parent="." unique_id=920438222]
+[node name="Ground" type="StaticBody2D" parent="." unique_id=920438222 groups=["ground"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=773737001]
 position = Vector2(425, 472)
@@ -32,6 +32,7 @@ script = ExtResource("3_u4ce8")
 position = Vector2(1327, 81)
 
 [node name="Button" type="Button" parent="." unique_id=251880352]
+z_index = 5
 offset_left = 109.0
 offset_top = 246.0
 offset_right = 348.0
@@ -40,6 +41,25 @@ script = ExtResource("5_3e07v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=524910097]
 
+[node name="Lose" type="Label" parent="CanvasLayer" unique_id=67256737]
+visible = false
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 250
+text = "You Lose"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HUD" parent="CanvasLayer" unique_id=1562084413 instance=ExtResource("7_opmy1")]
+unique_name_in_owner = true
+mouse_behavior_recursive = 1
 
 [connection signal="mode_change" from="Button" to="." method="_on_button_mode_change"]
+[connection signal="mode_attack" from="CanvasLayer/HUD" to="." method="_on_hud_mode_attack"]
+[connection signal="mode_change" from="CanvasLayer/HUD" to="." method="_on_hud_mode_change"]
+[connection signal="mode_jump" from="CanvasLayer/HUD" to="." method="_on_hud_mode_jump"]
+[connection signal="player_dead" from="CanvasLayer/HUD" to="." method="_on_hud_player_dead"]
