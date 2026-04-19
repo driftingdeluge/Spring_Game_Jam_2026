@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cykc8rbeyia0c"]
 
+[ext_resource type="Texture2D" uid="uid://cqohmc0014cum" path="res://Assets/GEMS SPR26 Sprite Test Avop (1).png" id="1_6fbih"]
 [ext_resource type="Texture2D" uid="uid://waj2riniag5f" path="res://Assets/sword_action.png" id="1_bjfho"]
 [ext_resource type="Texture2D" uid="uid://dsfu75cynqb1b" path="res://Assets/jump_action.png" id="2_6fbih"]
 [ext_resource type="Texture2D" uid="uid://co8aerwwqn2ve" path="res://Assets/change_direction_action.png" id="3_t1xeu"]
@@ -11,6 +12,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GemsSpr26SpriteTestAvop(1)" type="Sprite2D" parent="." unique_id=710365833]
+position = Vector2(577.5, 598)
+scale = Vector2(6.281249, 2.3124979)
+texture = ExtResource("1_6fbih")
 
 [node name="HUDMargin" type="MarginContainer" parent="." unique_id=1360426510]
 layout_mode = 1

@@ -5,7 +5,7 @@ func _ready() -> void:
 	pass
 	
 func _on_play_pressed() -> void:
-	GameManager.goto_scene("res://Scenes/playground.tscn")
+	GameManager.goto_scene("res://Scenes/level_select.tscn")
 	pass
 
 func _on_options_pressed() -> void:
