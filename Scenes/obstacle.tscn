@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://futohi41ky8k"]
 
 [ext_resource type="Script" uid="uid://neuypyl0dgj1" path="res://Scenes/obstacle.gd" id="1_2p81s"]
-[ext_resource type="Texture2D" uid="uid://xgddwp673vky" path="res://icon.svg" id="1_15o2q"]
+[ext_resource type="Texture2D" uid="uid://bccspfgy4lmo4" path="res://Assets/ground_enemy.png" id="2_2p81s"]
 
 [node name="Obstacle" type="CharacterBody2D" unique_id=1557196692]
 script = ExtResource("1_2p81s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=698724755]
-texture = ExtResource("1_15o2q")
+texture = ExtResource("2_2p81s")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=765870148]
-polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=182535438]
+polygon = PackedVector2Array(8, -64, -8, -64, -8, -61.6, -64, 49.6, -64, 64, 64, 64, 64, 47.6, 8, -61.6)

@@ -1,11 +1,11 @@
-[gd_scene format=4 uid="uid://b6j4maxmauqm0"]
+[gd_scene format=4 uid="uid://cwhw0cqcot3u6"]
 
 [ext_resource type="Texture2D" uid="uid://c03nojwuxugyc" path="res://Assets/player.png" id="1_4hvuo"]
 [ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
 [ext_resource type="Script" uid="uid://fcpk8hi8t6qs" path="res://Scenes/player.gd" id="1_vly50"]
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
-[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="3_didp7"]
+[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="3_didp7"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="7_2a60c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
@@ -36,14 +36,19 @@ sources/1 = SubResource("TileSetAtlasSource_c5erv")
 [node name="Player" parent="." unique_id=1494874155 instance=ExtResource("1_y4dr7")]
 scale = Vector2(0.5, 0.5)
 
-[node name="Background" type="Sprite2D" parent="Player" unique_id=396783888]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2025170000]
+position = Vector2(17, 79)
+
+[node name="Parallax2D" type="Parallax2D" parent="Player" unique_id=486752378]
+repeat_size = Vector2(2300, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 100
+
+[node name="Background" type="Sprite2D" parent="Player/Parallax2D" unique_id=396783888]
 z_index = -1
 position = Vector2(20, 76.99999)
 scale = Vector2(72, 40.5)
 texture = ExtResource("1_lyd6k")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2025170000]
-position = Vector2(17, 79)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=685021724]
 visible = false
