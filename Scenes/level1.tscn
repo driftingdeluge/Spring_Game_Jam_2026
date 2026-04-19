@@ -2,8 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://c03nojwuxugyc" path="res://Assets/player.png" id="1_4hvuo"]
 [ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
-[ext_resource type="Script" uid="uid://cqmv20lrjtwds" path="res://Scenes/player.gd" id="1_vly50"]
+[ext_resource type="Script" uid="uid://fcpk8hi8t6qs" path="res://Scenes/player.gd" id="1_vly50"]
+[ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
+[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="3_didp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
 size = Vector2(26, 57)
@@ -26,7 +28,24 @@ sources/1 = SubResource("TileSetAtlasSource_c5erv")
 
 [node name="Level1" type="Node2D" unique_id=1814583198]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1464838278]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1562084413 instance=ExtResource("3_didp7")]
+
+[node name="Player" parent="." unique_id=1494874155 instance=ExtResource("1_y4dr7")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Background" type="Sprite2D" parent="Player" unique_id=396783888]
+z_index = -1
+position = Vector2(20, 76.99999)
+scale = Vector2(72, 40.5)
+texture = ExtResource("1_lyd6k")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2025170000]
+position = Vector2(17, 79)
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=685021724]
+visible = false
 script = ExtResource("1_vly50")
 
 [node name="Background" type="Sprite2D" parent="CharacterBody2D" unique_id=411106718]
@@ -40,7 +59,7 @@ shape = SubResource("RectangleShape2D_vly50")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2068687398]
 position = Vector2(16.781254, 78.34375)
-scale = Vector2(0.06220587, 0.13338234)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_4hvuo")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1858623180]
