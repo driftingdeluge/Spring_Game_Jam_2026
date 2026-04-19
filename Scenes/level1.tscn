@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://cwhw0cqcot3u6"]
 
-[ext_resource type="Script" uid="uid://cct10inq3qcay" path="res://Scenes/level_1.gd" id="1_2a60c"]
+[ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_2a60c"]
 [ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
-[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="3_didp7"]
+[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="3_didp7"]
 [ext_resource type="Texture2D" uid="uid://buyx7y57j6fxa" path="res://Assets/Spike.png" id="5_y4dr7"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="7_2a60c"]
 
@@ -43,7 +43,6 @@ z_index = 3
 
 [node name="Player" parent="." unique_id=1494874155 instance=ExtResource("1_y4dr7")]
 scale = Vector2(0.5, 0.5)
-collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2025170000]
 position = Vector2(17, 79)
@@ -69,10 +68,7 @@ tile_set = SubResource("TileSet_y4dr7")
 position = Vector2(512, 92)
 
 [node name="Spike" type="CharacterBody2D" parent="." unique_id=711165502]
-position = Vector2(769, 153)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike" unique_id=1323157082]
-shape = SubResource("CapsuleShape2D_2a60c")
+position = Vector2(776, 152)
 
 [node name="Sprite2D" type="Sprite2D" parent="Spike" unique_id=1756189571]
 rotation = 3.1415927
@@ -80,9 +76,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("5_y4dr7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spike" unique_id=1843914197]
-position = Vector2(85.000015, -7.9999995)
+position = Vector2(-24.999977, 6.9999995)
 scale = Vector2(0.4926181, 1)
-polygon = PackedVector2Array(42.629395, 19, 85.25879, -21, 16.239746, -20)
+polygon = PackedVector2Array(48.71924, 8, 81.19885, -24, 16.239746, -24)
 
 [node name="DeathBarrier" type="Area2D" parent="." unique_id=698379563]
 collision_layer = 2

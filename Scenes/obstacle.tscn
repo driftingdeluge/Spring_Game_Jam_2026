@@ -5,7 +5,6 @@
 
 [node name="Obstacle" type="CharacterBody2D" unique_id=1557196692]
 collision_layer = 4
-collision_mask = 7
 script = ExtResource("1_2p81s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=698724755]
