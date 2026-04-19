@@ -27,7 +27,7 @@ func _physics_process(delta):
 				# if attack hits something
 				if result and result.collider.is_class("CharacterBody2D") and result.collider is GroundEnemy:
 					print("atacked ",result.collider.name)
-					if abs(result.collider.speed) / result.collider.speed == abs(speed) / speed:
+					if abs(result.collider.speed) / -result.collider.speed == abs(speed) / speed:
 						result.collider.die()
 			1:
 				if is_on_floor():
