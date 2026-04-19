@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
-[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="3_didp7"]
+[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="3_didp7"]
 [ext_resource type="Texture2D" uid="uid://buyx7y57j6fxa" path="res://Assets/Spike.png" id="5_y4dr7"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="7_2a60c"]
 
@@ -29,10 +29,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_c5erv")
 sources/3 = SubResource("TileSetAtlasSource_didp7")
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2a60c"]
-radius = 19.0
-height = 48.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_didp7"]
 size = Vector2(3344, 82)
@@ -82,6 +78,11 @@ shape = SubResource("CapsuleShape2D_2a60c")
 rotation = 3.1415927
 scale = Vector2(2, 2)
 texture = ExtResource("5_y4dr7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spike" unique_id=1843914197]
+position = Vector2(85.000015, -7.9999995)
+scale = Vector2(0.4926181, 1)
+polygon = PackedVector2Array(42.629395, 19, 85.25879, -21, 16.239746, -20)
 
 [node name="DeathBarrier" type="Area2D" parent="." unique_id=698379563]
 collision_layer = 2
