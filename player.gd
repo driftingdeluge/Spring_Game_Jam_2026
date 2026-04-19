@@ -11,14 +11,14 @@ signal got_hit
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+	
 	velocity.x = speed
 	
 	if Input.is_action_just_pressed("changeMode"):
 		mode += 1
 		if mode > 2:
 			mode = 0
-
+	
 	if Input.is_action_just_pressed("jump"):
 		match mode:   
 			0:
