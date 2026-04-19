@@ -4,10 +4,15 @@ extends Control
 @onready var jump = %Jump
 @onready var direction = %ChangeDirection
 
+@onready var health = %Health
+@onready var hp = 3
+
 #@onready enum = {ATTACK, JUMP, CHANGE}
 @onready var state = [attack, jump, direction]
 @onready var active = 0
 @onready var hover = 0
+
+signal player_dead
 
 func _ready() -> void:
 	pass
@@ -44,3 +49,10 @@ func color_active() -> void:
 	
 func color_option() -> void:
 	state[hover].modulate = Color(0.867, 0.679, 0.265, 1.0)
+
+func decrement_health() -> void:
+	hp -= 1
+	health.text = "Health: " + str(hp)
+	if hp <= 0:
+		player_dead.emit()
+	
