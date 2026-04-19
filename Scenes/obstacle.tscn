@@ -4,10 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bccspfgy4lmo4" path="res://Assets/ground_enemy.png" id="2_2p81s"]
 
 [node name="Obstacle" type="CharacterBody2D" unique_id=1557196692]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_2p81s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=698724755]
 texture = ExtResource("2_2p81s")
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=182535438]
-polygon = PackedVector2Array(8, -64, -8, -64, -8, -61.6, -64, 49.6, -64, 64, 64, 64, 64, 47.6, 8, -61.6)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2046896132]
+polygon = PackedVector2Array(19.5, -39.5, -19.5, -39.5, -19.5, -37.4, -63.9, 50.5, -64, 64, 64, 64, 64, 48.699997, 21.5, -33.4, 21.5, -36.9, 19.5, -37.9)

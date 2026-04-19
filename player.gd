@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 100
+@export var speed := 150
 @export var jump_force := -600
 @export var gravity := 1000
 @export var rotation_speed = 3.0
@@ -21,10 +21,12 @@ func _physics_process(delta):
 		match mode:   
 			0:
 				var space_state = get_world_2d().direct_space_state
-				var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x + (2 * speed), position.y))
+				# Create a ray from current position forward, keep default collision mask and excluse self
+				var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x + (2 * speed), position.y), 0xFFFFFFFF, [self.get_rid()])
 				var result = space_state.intersect_ray(query)
 				# if attack hits something
-				if result and result.collider.is_class("CharacterBody2D"):
+				if result and result.collider.is_class("CharacterBody2D") and result.collider is GroundEnemy:
+					print("atacked ",result.collider.name)
 					if abs(result.collider.speed) / result.collider.speed == abs(speed) / speed:
 						result.collider.die()
 			1:
