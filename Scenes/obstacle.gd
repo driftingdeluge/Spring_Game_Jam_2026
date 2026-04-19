@@ -18,11 +18,10 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision:
 			var angle = collision.get_angle()
-			if collision.get_collider().is_class("CharacterBody2D"):
-				if not ((angle >= PI*.75 and angle <= PI*1.25) or (angle <= PI*.25 or angle >= PI*1.75)):
-					speed = -speed
-				elif (angle >= PI*.75 and angle <= PI*1.25) and speed != 0: #this needs to go in the player
-					disable_movement()
+			if not ((angle >= PI*.75 and angle <= PI*1.25) or (angle <= PI*.25 or angle >= PI*1.75)):
+				speed = -speed
+			elif (angle >= PI*.75 and angle <= PI*1.25) and speed != 0: #this needs to go in the player
+				disable_movement()
 		
 	if not is_on_floor():
 		velocity.y += gravity * delta
