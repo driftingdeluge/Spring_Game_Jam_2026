@@ -1,11 +1,12 @@
-[gd_scene format=4 uid="uid://cwhw0cqcot3u6"]
+[gd_scene format=4 uid="uid://b6j4maxmauqm0"]
 
 [ext_resource type="Texture2D" uid="uid://c03nojwuxugyc" path="res://Assets/player.png" id="1_4hvuo"]
 [ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
 [ext_resource type="Script" uid="uid://fcpk8hi8t6qs" path="res://Scenes/player.gd" id="1_vly50"]
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
-[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="3_didp7"]
+[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="3_didp7"]
+[ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="7_2a60c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
 size = Vector2(26, 57)
@@ -70,3 +71,6 @@ position = Vector2(-41.999996, 120.00001)
 scale = Vector2(5, 2.5)
 tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAAAAAIAAQAAAAEAAAABAAEAAQABAAAAAAABAAIAAQABAAEAAAADAAIAAQAAAAAAAAADAAMAAQAAAAEAAAAEAAIAAQABAAAAAAAEAAMAAQABAAEAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAEAAAAHAAEAAQABAAAAAAAHAAIAAQABAAEAAAAKAAAAAQABAAEAAAAKAAQAAQABAAEAAAAJAP//AQAAAAAAAAAJAAAAAQAAAAEAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAEAAAAKAP//AQABAAAAAAAKAAMAAQABAAAAAAA=")
 tile_set = SubResource("TileSet_y4dr7")
+
+[node name="Obstacle" parent="." unique_id=1557196692 instance=ExtResource("7_2a60c")]
+position = Vector2(512, 92)
