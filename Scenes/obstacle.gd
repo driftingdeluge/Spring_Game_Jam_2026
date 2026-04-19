@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name GroundEnemy
 
 @export var gravity := 1000
 @export var speed := -100
