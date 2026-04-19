@@ -1,16 +1,11 @@
 [gd_scene format=4 uid="uid://cwhw0cqcot3u6"]
 
-[ext_resource type="Texture2D" uid="uid://c03nojwuxugyc" path="res://Assets/player.png" id="1_4hvuo"]
 [ext_resource type="Texture2D" uid="uid://cpqoofxdnt7ll" path="res://Assets/Background.png" id="1_lyd6k"]
-[ext_resource type="Script" uid="uid://fcpk8hi8t6qs" path="res://Scenes/player.gd" id="1_vly50"]
 [ext_resource type="PackedScene" uid="uid://cuh2bed3vj1h1" path="res://Scenes/Player.tscn" id="1_y4dr7"]
 [ext_resource type="Texture2D" uid="uid://defbveam3rayc" path="res://Assets/Platform.png" id="3_c5erv"]
-[ext_resource type="PackedScene" uid="uid://d1nomt5k04y7b" path="res://Scenes/hud.tscn" id="3_didp7"]
+[ext_resource type="PackedScene" uid="uid://cykc8rbeyia0c" path="res://Scenes/hud.tscn" id="3_didp7"]
 [ext_resource type="Texture2D" uid="uid://buyx7y57j6fxa" path="res://Assets/Spike.png" id="5_y4dr7"]
 [ext_resource type="PackedScene" uid="uid://futohi41ky8k" path="res://Scenes/obstacle.tscn" id="7_2a60c"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
-size = Vector2(26, 57)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5erv"]
 texture = ExtResource("3_c5erv")
@@ -33,10 +28,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_c5erv")
 sources/3 = SubResource("TileSetAtlasSource_didp7")
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2a60c"]
-radius = 19.0
-height = 48.0
 
 [node name="Level1" type="Node2D" unique_id=1814583198]
 
@@ -62,27 +53,6 @@ position = Vector2(20, 76.99999)
 scale = Vector2(72, 40.5)
 texture = ExtResource("1_lyd6k")
 
-[node name="CharacterBody" type="CharacterBody2D" parent="." unique_id=1732676020]
-visible = false
-script = ExtResource("1_vly50")
-
-[node name="Background" type="Sprite2D" parent="CharacterBody" unique_id=411106718]
-position = Vector2(-23, 166)
-scale = Vector2(36, 20.25)
-texture = ExtResource("1_lyd6k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody" unique_id=1390885776]
-position = Vector2(-26, 163)
-shape = SubResource("RectangleShape2D_vly50")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody" unique_id=2068687398]
-position = Vector2(-26, 163)
-scale = Vector2(0.06220587, 0.13338234)
-texture = ExtResource("1_4hvuo")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody" unique_id=1858623180]
-position = Vector2(-26, 167)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=402163442]
 position = Vector2(-41.999996, 120.00001)
 scale = Vector2(5, 2.5)
@@ -95,12 +65,13 @@ position = Vector2(512, 92)
 [node name="Spike" type="CharacterBody2D" parent="." unique_id=711165502]
 position = Vector2(673, 167)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike" unique_id=1323157082]
-position = Vector2(104, -9)
-shape = SubResource("CapsuleShape2D_2a60c")
-
 [node name="Sprite2D" type="Sprite2D" parent="Spike" unique_id=1756189571]
 position = Vector2(70.000015, 6.9999886)
 rotation = 3.1415927
 scale = Vector2(3.8899453, 3.8456795)
 texture = ExtResource("5_y4dr7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spike" unique_id=1843914197]
+position = Vector2(85.000015, -7.9999995)
+scale = Vector2(0.4926181, 1)
+polygon = PackedVector2Array(42.629395, 19, 85.25879, -21, 16.239746, -20)
