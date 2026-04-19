@@ -59,4 +59,7 @@ unique_name_in_owner = true
 mouse_behavior_recursive = 1
 
 [connection signal="mode_change" from="Button" to="." method="_on_button_mode_change"]
+[connection signal="mode_attack" from="CanvasLayer/HUD" to="." method="_on_hud_mode_attack"]
+[connection signal="mode_change" from="CanvasLayer/HUD" to="." method="_on_hud_mode_change"]
+[connection signal="mode_jump" from="CanvasLayer/HUD" to="." method="_on_hud_mode_jump"]
 [connection signal="player_dead" from="CanvasLayer/HUD" to="." method="_on_hud_player_dead"]
