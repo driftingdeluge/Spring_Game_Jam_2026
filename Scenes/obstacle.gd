@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var gravity := 1000
-@export var speed := 200
+@export var speed := -200
 @export var jump_force := -300
 
 func disable_movement():
@@ -11,7 +11,7 @@ func disable_movement():
 	speed = temp_speed
 
 func _physics_process(delta):
-	velocity.x = -speed
+	# velocity.x = -speed
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -28,5 +28,5 @@ func _physics_process(delta):
 	elif speed != 0:
 		velocity.y = jump_force
 
-	if global_position.x < -100:
-		queue_free()
+func die():
+	queue_free()

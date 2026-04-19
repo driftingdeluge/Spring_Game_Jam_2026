@@ -20,7 +20,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		match mode:   
 			0:
-				pass
+				var space_state = get_world_2d().direct_space_state
+				var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x + (2 * speed), position.y))
+				var result = space_state.intersect_ray(query)
+				# if attack hits something
+				if result and result.collider.is_class("CharacterBody2D"):
+					if abs(result.collider.speed) / result.collider.speed == abs(speed) / speed:
+						result.collider.die()
 			1:
 				if is_on_floor():
 					velocity = Vector2.UP.rotated(rotation) * rotation_speed
