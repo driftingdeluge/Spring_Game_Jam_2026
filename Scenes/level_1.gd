@@ -19,3 +19,10 @@ func _on_death_barrier_body_entered(body: Node2D) -> void:
 func _on_player_got_hit() -> void:
 	if get_tree():
 		get_tree().reload_current_scene()
+
+
+func _on_level_complete_barrier_body_entered(body: Node2D) -> void:
+	print(body.name)
+	if body.name == "Player" and get_tree():
+		get_tree().paused = true
+		$CanvasLayer/LevelCompleteUI.show()
