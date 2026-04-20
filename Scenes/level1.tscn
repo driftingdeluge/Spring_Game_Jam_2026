@@ -46,7 +46,7 @@ sources/3 = SubResource("TileSetAtlasSource_didp7")
 sources/0 = SubResource("TileSetAtlasSource_bs12r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_didp7"]
-size = Vector2(3720, 82)
+size = Vector2(4192, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgkgd"]
 size = Vector2(1186, 154)
@@ -64,7 +64,6 @@ visible = false
 next_level = ExtResource("4_rqhku")
 
 [node name="Player" parent="." unique_id=1494874155 instance=ExtResource("1_y4dr7")]
-position = Vector2(1856, -64)
 scale = Vector2(0.5, 0.5)
 metadata/_edit_group_ = true
 
@@ -118,7 +117,7 @@ polygon = PackedVector2Array(48.71924, 8, 81.19885, -24, 47.31665, -24, 16.23974
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBarrier" unique_id=1797705834]
-position = Vector2(1908, 576)
+position = Vector2(1672, 576)
 shape = SubResource("RectangleShape2D_didp7")
 
 [node name="LevelCompleteBarrier" type="Area2D" parent="." unique_id=1525419625]
